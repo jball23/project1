@@ -1,0 +1,18 @@
+Project 1: User Stories
+
+MVP: Bronze
+-I want to clearly see the squares I will be clicking on
+-I want to the game to look good
+-I want to click on a square and have it change color
+-I want the new color to stay until I click on another one to change it's color also
+-If both colors match, they should stay revealed to show me the remaining squares in play
+-If both colors don't match, they should return to their default color
+-When all squares have been matched, player should be congratulated
+
+Silver:
+-I want to have a "reset" button that will turn all matched colors back to their default color
+-I want to see my progress represented numerically(ie. how many matches left to go)
+-I want the colors to be changed with a smooth fade transition to make the experience feel higher quality
+
+Gold:
+-I want to be able to select various difficulties
