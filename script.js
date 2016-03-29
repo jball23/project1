@@ -2,10 +2,10 @@ var deck = document.querySelectorAll(".square");
 var color = '';
 var colorEven;
 var colorOdd;
+var defaultColor = 'lightblue';
 var card;
 var clicks = 0;
-var clickNum = null;
-
+var firstCardOfPair;
 
 for(var i = 0; i < deck.length; i++) {
   card = document.querySelectorAll(".square");
@@ -14,19 +14,27 @@ for(var i = 0; i < deck.length; i++) {
 
 
 function showColor() {
-  color = this.getAttribute("data-content");
-  this.style.background = color;
+  var currentCard = this;
+
+  color = currentCard.getAttribute("data-content");
+  currentCard.style.background = color;
   clicks += 1;
 
   if(clicks % 2 === 0) {
-    console.log("even click");
-    clickNum = 'even';
     colorEven = color;
   } else {
-    clickNum = 'odd';
     colorOdd = color;
+    firstCardOfPair = currentCard;
   }
+
+  if(clicks % 2 === 0 && colorEven !== colorOdd) {
+    alert("no match");
+    firstCardOfPair.style.background = defaultColor;
+    currentCard.style.background = defaultColor;
+  }
+
 }
+
 
 
 
