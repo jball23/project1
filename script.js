@@ -1,22 +1,95 @@
-var squares = document.querySelectorAll(".square");
+var deck = document.querySelectorAll(".square");
+var color = '';
+var colorEven;
+var colorOdd;
+var card;
 var clicks = 0;
-var lastPicked;
+var clickNum = null;
 
 
-
-for(var i = 0; i < squares.length; i++) {
-  squares[i].addEventListener("click", function() {
-    console.log(lastPicked);
-    this.style.background = this.getAttribute("data-content");
-    console.log(this.getAttribute("data-content"));
-    console.log(clicks);
-//compare the two cards
-
-    lastPicked = this;
-    clicks++;
-  });
+for(var i = 0; i < deck.length; i++) {
+  card = document.querySelectorAll(".square");
+  card[i].addEventListener("click", showColor);
 }
 
+
+function showColor() {
+  color = this.getAttribute("data-content");
+  this.style.background = color;
+  clicks += 1;
+
+  if(clicks % 2 === 0) {
+    console.log("even click");
+    clickNum = 'even';
+    colorEven = color;
+  } else {
+    clickNum = 'odd';
+    colorOdd = color;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var squares = document.querySelectorAll(".square");
+// var clicks = 1;
+// var lastPicked;
+//
+//
+//
+// for(var i = 0; i < squares.length; i++) {
+//   squares[i].addEventListener("click", function() {
+//     this.style.background = this.getAttribute("data-content");
+// //compare the two cards
+//
+//
+//
+//     lastPicked = this;
+//     // if(lastPicked.style.background = this.getAttribute("data-content")) {
+//     //   console.log("matched");
+//     // }
+//
+//     clicks++;
+//   });
+// }
+//
 
 
 
