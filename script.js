@@ -75,11 +75,11 @@ function flipCard() {
       attempts++;
   } else if(clicks % 2 === 0 && colorEven === colorOdd) {
       matched++;
+      attempts++;
       firstCardOfPair.removeEventListener("click", flipCard);
       currentCard.removeEventListener("click", flipCard);
-      attempts++;
   }
-  
+
 
   if(matched === 12) {
     alert("YOU'RE A WINNER, JUST LIKE YOUR MOM SAID!! \n...and it only took you  "+ attempts +"  attempts!");
@@ -96,6 +96,7 @@ function resetBoard() {
   }
   clicks = 0;
   matched = 0;
+  attempts = 0;
   shuffle(bgColor);
   setColors();
   divEvents();
