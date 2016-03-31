@@ -43,10 +43,12 @@ setColors();
 // Adds a click event listener to each card and references the flipCard
 // function in order to show the bgColor assigned to it
 // ********************************************************************
-for(var i = 0; i < cards.length; i++) {
-  cards[i].addEventListener("click", flipCard);
+function divEvents() {
+  for(var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", flipCard);
+  }
 }
-
+divEvents();
 
 // Flips the card over to reveal it's color, increases the click
 // count, and evaluates matches
@@ -95,6 +97,7 @@ function resetBoard() {
   clicks = 0;
   shuffle(bgColor);
   setColors();
+  divEvents();
 }
 
 resetButton[0].addEventListener("click", resetBoard);
