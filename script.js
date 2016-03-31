@@ -7,6 +7,7 @@ var bgColor = ['#ce3c3c', '#ce3c3c', '#53BBF4', '#53BBF4',
 
 var clicks = 0;
 var matched = 0;
+var attempts = 0;
 var cards = document.querySelectorAll(".square");
 var resetButton = document.getElementsByTagName("button");
 
@@ -54,7 +55,7 @@ function flipCard() {
   var currentCard = this;
   var background = this.getAttribute("data-content");
   currentCard.style.background = background;
-  clicks += 1;
+  clicks++;
 
   if(clicks % 2 === 0) {
     colorEven = background;
@@ -69,13 +70,17 @@ function flipCard() {
       firstCardOfPair.style.background = 'white';
       currentCard.style.background = 'white';
     }, delay);
+    attempts++;
   } else if(clicks % 2 === 0 && colorEven === colorOdd) {
       matched++;
+      firstCardOfPair.removeEventListener("click", flipCard);
+      currentCard.removeEventListener("click", flipCard);
       console.log(matched);
   }
 
+
   if(matched === 12) {
-    alert("YOU'RE A WINNER, JUST LIKE YOUR MOM SAID!!");
+    alert("YOU'RE A WINNER, JUST LIKE YOUR MOM SAID!! \n...and it only took you  "+ attempts +"  attempts!");
       }
 }
 
