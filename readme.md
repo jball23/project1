@@ -1,4 +1,5 @@
-                  WDI9 Project 1 :: Jordan's Memory Game
+WDI9 PROJECT 1 :: JORDAN'S MEMORY GAME
+**************************************
 
 To build this game, I used HTML, CSS and Javascript...and the essence of
 the tears I shed on day 1 of this project.  
@@ -9,22 +10,22 @@ design is intentionally simple...not because I couldn't make it busier.  I also
 knew I would need to save my energy for going to war with JavaScript, and I'm
 glad I did...it was an epic battle.
 
-                            ****** HTML ******
-                            ******************
+****** HTML ******
+******************
 I have 2 rows, one for the header and one for the board.  I have 6 columns in
 my second row, with 4 divs in each, making up my board.  I nested my divs inside
 the columns to ensure structure, even spacing, and responsiveness(using width
 percentage values instead of pixels).
 
 
-                            ****** CSS ******
-                            *****************
+****** CSS ******
+*****************
 Pretty straight forward.  Clean lines, grayscale, easy to use, responsive(ish)...
 no fuss no muss.
 
 
-                         ****** JAVASCRIPT ******
-                         ************************
+****** JAVASCRIPT ******
+************************
 The idea sounds simple, click a square to show it's color, click another square  
 to show it's color.  If they match, keep the colors visible.  If they don't match,
 set the color back to it's default color, white. I was naive.  After getting
@@ -44,8 +45,8 @@ stored in a variable.  If the click is even, it will compare the two color value
 The "RESET" button sets all the colors back to white and shuffles the board.
 
 
-                          ****** PROBLEMS ******
-                          **********************
+****** PROBLEMS ******
+**********************
 1.  Because of how I'm comparing the two colors based on click count, and because
 I don't have a way of setting matched cards aside, if you click on a matched
 card, it will increase the click count and throw the whole sequence of the game
