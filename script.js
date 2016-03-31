@@ -95,6 +95,7 @@ function resetBoard() {
     cards[i].style.background = 'white';
   }
   clicks = 0;
+  matched = 0;
   shuffle(bgColor);
   setColors();
   divEvents();
