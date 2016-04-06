@@ -11,6 +11,7 @@ body {
 .row1 {
   border-bottom: 1px solid #888888;
   text-align: center;
+  /* the padding below has a syntax error... use spaces instead of commas */
   padding: 20px, 10px;
 }
 
@@ -47,6 +48,9 @@ button:focus {
   outline: 0;
 }
 
+/* suggest giving this a name like clearfix so it can be reused
+  on multiple elements
+*/
 .row2:before, .row2:after {
   content: "";
   display: table;

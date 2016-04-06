@@ -7,18 +7,25 @@
 </head>
 <body>
 
+  <!-- with the exception of grid styles like column-2, etc, recommend using
+      semantic class names, so instead of row1, row2, I'd use a class of header
+      (or a header tag), and a class of game-grid instead of row2 further below-->
   <div class="row1">
     <h1>CHECK YOUR MEMORY!</h1>
     <div class="score">
+      <!-- nice use of spans -->
       <h2><span class="matches">0</span> of <span class="possible">12</span></h2>
     </div>
+    <!-- suggest putting an id on this button so that your JS can select just
+          this button (in case you later add a second one) -->
     <button>RESET</button>
   </div>
 
 
   <div class="row2">
-
+    <!-- it's a small  -->
     <div class="column columnOne column-2">
+      <!-- are these ids used? can't find them in your JS code? -->
       <div id="square-1" class="square"></div>
       <div id="square-7" class="square"></div>
       <div id="square-13" class="square"></div>
