@@ -1,3 +1,6 @@
+// this isn't a strong suggestion, but more of an idea... what if you only
+// had one copy of each color in this array, and 'duplicated' it when you needed
+// to, using JS...
 var bgColor = ['#ce3c3c', '#ce3c3c', '#53BBF4', '#53BBF4',
                '#e793f9', '#e793f9', '#77242c', '#77242c',
                '#223a93', '#223a93', '#5d51fc', '#5d51fc',
@@ -5,9 +8,13 @@ var bgColor = ['#ce3c3c', '#ce3c3c', '#53BBF4', '#53BBF4',
                '#a3049b', '#a3049b', '#eaea28', '#eaea28',
                '#eaaa28', '#eaaa28', '#0a7a0a', '#0a7a0a'];
 
+// like the organization here!
 var clicks = 0;
 var matched = 0;
 var cards = document.querySelectorAll(".square");
+// favor using an ID here, but even still, since getElementsByTagName returns
+// an array, I'd go ahead and fetch the first element out of the array here using
+// [0], so that I don't forget to do so later on.
 var resetButton = document.getElementsByTagName("button");
 
 
@@ -27,7 +34,7 @@ function shuffle(array) {
 }
 shuffle(bgColor);
 
-
+// love these comments!
 // Adds a data-content attribute to index.html and gives each attribute
 // a random color from the bgColor array
 // ********************************************************************
@@ -37,7 +44,6 @@ function setColors() {
   }
 }
 setColors();
-
 
 // Adds a click event listener to each card and references the flipCard
 // function in order to show the bgColor assigned to it
@@ -51,6 +57,10 @@ for(var i = 0; i < cards.length; i++) {
 // count, and evaluates matches
 // ****************************************************************
 function flipCard() {
+  // what about adding a class or data attribute to each card once it's been flipped
+  // to 'note' that fact. Then, you could check for the presence of that property
+  // here as well. If the card has already been flipped, you can just 'return' to
+  // exit this funtion immediately
   var currentCard = this;
   var background = this.getAttribute("data-content");
   currentCard.style.background = background;
@@ -63,6 +73,8 @@ function flipCard() {
     firstCardOfPair = currentCard;
   }
 
+  // suggest breaking this out into a function called something like
+  // `checkForMatches`
   if(clicks % 2 === 0 && colorEven !== colorOdd) {
     var delay = 500; // mis-matched cards flip back over after delay
     setTimeout(function() {
@@ -94,6 +106,8 @@ function resetBoard() {
 
 resetButton[0].addEventListener("click", resetBoard);
 
+// suggest removing old code! esp if it's been checked into git... you can always
+// go back in time and get it if you need it.
 
 //**************  OLD CODE!  ****************
 //**************  OLD CODE!  ****************
