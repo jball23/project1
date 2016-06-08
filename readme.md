@@ -1,11 +1,14 @@
 MEMORY GAME
-***********
 
+
+************
 Installation
 ************
 
 Clone repo and open in your text editor of choice
 
+
+***********
 How To Play
 ***********
 
